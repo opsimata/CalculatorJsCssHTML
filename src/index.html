@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/style/style.css">
+    <title>JavaScript/HTML Calculadora</title>
+</head>
+
+<body class="page-background">
+    <script>
+
+        function lineBreaker() {
+            document.write("<br>");
+        }
+        function print(printContent) {
+            document.write(printContent);
+            lineBreaker();
+        }
+        function subtracao(num_1, num_2) {
+            var resultadoSubtracao;
+
+            resultadoSubtracao = num_1 - num_2;
+            print("O resultado da subtração é: " + resultadoSubtracao + ".");
+            lineBreaker();
+        }
+        function adicao(num_1, num_2) {
+            var resultadoAdicao;
+
+            resultadoAdicao = num_1 + num_2;
+            print("O resultado da adição é: " + resultadoAdicao + ".");
+            lineBreaker();
+        }
+        function multiplicacao(num_1, num_2) {
+            var resultadoMultiplicacao;
+
+            resultadoMultiplicacao = num_1 * num_2;
+            print("O resultado da multiplicação é: " + resultadoMultiplicacao + ".");
+            lineBreaker();
+        }
+        function divisao(num_1, num_2) {
+            var resultadoDivisao;
+
+            resultadoDivisao = num_1 / num_2;
+            print("O resultado da divisão é: " + resultadoDivisao + ".");
+            lineBreaker();
+        }
+
+        var operacao = prompt("Escolha uma Operação:\n\nOperações Válidas:\n| adicao | subtracao | divisao | multiplicacao |\n\n(Digite a operação exatamente como discriminado acima.)");
+
+        print("A operação escolhida foi: " + operacao + ".");
+        lineBreaker();
+
+        var numero_1 = prompt("Escolha o primeiro número:\n");
+        var numero_2 = prompt("Escolha o segundo número:\n");
+
+        print("O primeiro número escolhido foi: " + numero_1 + ".");
+        lineBreaker();
+        print("O segundo número escolhido foi: " + numero_2 + ".");
+        lineBreaker();
+
+        switch (operacao) {
+            case "adicao":
+                adicao(parseFloat(numero_1), parseFloat(numero_2));
+                break;
+            case "subtracao":
+                subtracao(parseFloat(numero_1), parseFloat(numero_2));
+                break;
+            case "divisao":
+                divisao(parseFloat(numero_1), parseFloat(numero_2));
+                break;
+            case "multiplicacao":
+                multiplicacao(parseFloat(numero_1), parseFloat(numero_2));
+                break;
+            default:
+                print("A operação informada é inválida! <br><br> (Reinicie a aplicação e informe uma das operações válidas descritas na tela.)<br><br>Operações Válidas:<br>| adicao | subtracao | divisao | multiplicacao |<br>")
+                break;
+        }
+
+    </script>
+</body>
+
+</html>
